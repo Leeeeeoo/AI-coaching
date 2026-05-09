@@ -1,0 +1,143 @@
+page {
+  --color-primary: #1769FF;
+  --color-primary-strong: #0B5CFF;
+  --color-primary-soft: #E8F1FF;
+  --color-primary-gradient-start: #1769FF;
+  --color-primary-gradient-middle: #3D8CFF;
+  --color-primary-gradient-end: #72AAFF;
+  --color-background-page: #F4F8FF;
+  --color-background-surface: #FFFFFF;
+  --color-background-surface-overlay: rgba(255, 255, 255, 0.96);
+  --color-background-soft-blue: #F8FBFF;
+  --color-background-chart-grid: #F3F7FF;
+  --color-border-default: #E1EAF7;
+  --color-border-soft: #E8EEF8;
+  --color-text-primary: #111827;
+  --color-text-secondary: #64748B;
+  --color-text-muted: #8A96A8;
+  --color-success: #18BF74;
+  --color-success-soft: #E8FFF4;
+  --color-warning: #FF9B21;
+  --color-warning-soft: #FFF8ED;
+  --color-danger: #EF4444;
+  --color-danger-soft: #FFF1ED;
+  --color-purple: #7569FF;
+  --color-purple-soft: #EDE9FF;
+  --color-cyan: #22B8CF;
+  --color-icon-dark: #0F172A;
+  --color-text-heading: #182032;
+  --color-text-body: #253047;
+
+  --font-family-base: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  --font-size-nav-title: 27rpx;
+  --font-size-screen-title: 30rpx;
+  --font-size-section-title: 24rpx;
+  --font-size-body: 23rpx;
+  --font-size-label: 20rpx;
+  --font-size-micro: 18rpx;
+
+  --layout-header-height: 120rpx;
+  --layout-bottom-nav-height: 100rpx;
+  --layout-page-padding-x: 24rpx;
+  --layout-page-padding-top: 16rpx;
+  --layout-card-gap-compact: 12rpx;
+  --layout-card-gap-default: 14rpx;
+  --layout-card-gap-loose: 16rpx;
+  --layout-row-height-compact: 50rpx;
+  --layout-row-height-default: 56rpx;
+  --layout-touch-target-min: 44rpx;
+
+  --radius-xs: 8rpx;
+  --radius-sm: 10rpx;
+  --radius-md: 12rpx;
+  --radius-card: 14rpx;
+  --radius-card-large: 16rpx;
+  --radius-hero: 16rpx;
+  --radius-pill: 99rpx;
+
+  --shadow-card: 0 10rpx 24rpx rgba(30, 64, 175, 0.05);
+  --shadow-card-raised: 0 12rpx 30rpx rgba(30, 64, 175, 0.06);
+  --shadow-hero: 0 18rpx 38rpx rgba(23, 105, 255, 0.22);
+  --shadow-bottom-nav: 0 -8rpx 24rpx rgba(30, 64, 175, 0.05);
+
+  --component-hero-card-height: 176rpx;
+  --component-category-card-height: 100rpx;
+  --component-category-card-radius: 13rpx;
+  --component-scenario-row-min-height: 50rpx;
+  --component-test-row-min-height: 96rpx;
+  --component-path-card-min-height: 174rpx;
+
+  min-height: 100vh;
+  background: var(--color-background-page);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-base);
+}
+
+view,
+scroll-view,
+text,
+input,
+button {
+  box-sizing: border-box;
+}
+
+.page-scroll {
+  height: calc(100vh - var(--layout-header-height));
+  background: linear-gradient(180deg, var(--color-background-surface) 0%, var(--color-background-page) 100%);
+}
+
+.page-pad {
+  padding: var(--layout-page-padding-top) var(--layout-page-padding-x) 0;
+}
+
+button {
+  font-family: inherit;
+}
+
+.surface-card {
+  border: 1rpx solid var(--color-border-default);
+  border-radius: var(--radius-card);
+  background: var(--color-background-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.section-title {
+  color: var(--color-text-heading);
+  font-size: var(--font-size-section-title);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.status-pill {
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-micro);
+  font-weight: 800;
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.purple {
+  background: var(--color-purple);
+}
+
+.blue {
+  background: var(--color-primary);
+}
+
+.green {
+  background: var(--color-success);
+}
+
+.orange {
+  background: var(--color-warning);
+}
+
+.cyan {
+  background: var(--color-cyan);
+}
+
+.heart {
+  background: var(--color-primary);
+}

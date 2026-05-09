@@ -1,0 +1,53 @@
+<app-header title="DLBCL随访训练"></app-header>
+
+<scroll-view class="page-scroll" scroll-y type="list">
+  <view class="home-page page-pad">
+    <view class="hero-card" bindtap="goScenes">
+      <view class="hero-copy">
+        <text class="eyebrow">今日完成</text>
+        <view class="hero-number"><text>6</text><text>/15 场景</text></view>
+        <view class="progress-track"><view class="progress-fill"></view></view>
+      </view>
+      <text class="progress-text">40%</text>
+      <view class="doctor-avatar large">
+        <view class="face"></view>
+        <view class="hair"></view>
+        <view class="coat"></view>
+        <view class="clipboard"></view>
+      </view>
+    </view>
+
+    <view class="section-title">训练分类</view>
+    <view class="category-grid">
+      <view wx:for="{{categories}}" wx:key="key" class="category-card" bindtap="goScenes">
+        <view class="category-icon {{item.tone}}">{{item.icon}}</view>
+        <text>{{item.title}}</text>
+      </view>
+    </view>
+
+    <view class="focus-card" bindtap="goPath">
+      <view class="target-icon"><view></view></view>
+      <view class="focus-copy">
+        <text class="focus-title">本周重点：Glofit-GemOx路径</text>
+        <text class="focus-desc">掌握R/R路径要点，提升随访管理能力</text>
+      </view>
+      <text class="chevron">›</text>
+    </view>
+
+    <view class="accuracy-card">
+      <view>
+        <text class="small-label">训练正确率</text>
+        <view class="score-line"><text class="score-main">84</text><text>%</text></view>
+      </view>
+      <view class="mini-chart">
+        <view wx:for="{{trend}}" wx:key="*this" class="chart-dot" style="left: {{index * 28}}rpx; bottom: {{item}}rpx;"></view>
+        <view class="chart-line one"></view>
+        <view class="chart-line two"></view>
+        <view class="chart-line three"></view>
+      </view>
+      <view class="compare">较上周 <text>↑6%</text></view>
+    </view>
+  </view>
+</scroll-view>
+
+<bottom-nav active="training"></bottom-nav>

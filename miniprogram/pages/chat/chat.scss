@@ -1,0 +1,202 @@
+﻿.chat-shell {
+  min-height: calc(100vh - var(--layout-header-height));
+  background: linear-gradient(180deg, var(--color-background-surface) 0%, var(--color-background-page) 100%);
+  padding-bottom: 284rpx;
+  box-sizing: border-box;
+}
+
+.chat-scroll {
+  height: calc(100vh - 404rpx);
+}
+
+.chat-list {
+  padding: 18rpx 22rpx 12rpx;
+}
+
+.message-row {
+  display: flex;
+  gap: 14rpx;
+  align-items: flex-start;
+  margin-bottom: 18rpx;
+}
+
+.message-row.pharmacist {
+  justify-content: flex-end;
+}
+
+.mini-avatar {
+  flex: none;
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 56rpx;
+  font-size: 22rpx;
+  font-weight: 800;
+}
+
+.mini-avatar.ai {
+  background: var(--color-purple-soft);
+  color: var(--color-purple);
+}
+
+.mini-avatar.pharmacist {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.bubble-wrap {
+  max-width: 520rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 6rpx;
+}
+
+.message-row.pharmacist .bubble-wrap {
+  align-items: flex-end;
+}
+
+.sender {
+  font-size: var(--font-size-label);
+  color: var(--color-text-muted);
+  font-weight: 700;
+}
+
+.bubble {
+  padding: 18rpx 22rpx;
+  border-radius: 18rpx;
+  background: var(--color-background-soft-blue);
+  color: var(--color-text-primary);
+  font-size: 25rpx;
+  line-height: 1.55;
+  box-sizing: border-box;
+}
+
+.message-row.pharmacist .bubble {
+  background: var(--color-background-surface);
+  border: 1rpx solid var(--color-border-default);
+  box-shadow: var(--shadow-card);
+}
+
+.message-time {
+  font-size: var(--font-size-micro);
+  color: var(--color-text-muted);
+}
+
+.suggestion-card {
+  position: fixed;
+  left: 22rpx;
+  right: 22rpx;
+  bottom: 178rpx;
+  z-index: 10;
+  padding: 14rpx 16rpx;
+  border-radius: var(--radius-card-large);
+  border: 1rpx solid var(--color-border-default);
+  background: var(--color-background-surface-overlay);
+  box-shadow: var(--shadow-card-raised);
+}
+
+.suggestion-title {
+  font-size: 22rpx;
+  font-weight: 800;
+  color: var(--color-text-heading);
+}
+
+.suggestions {
+  display: flex;
+  gap: 14rpx;
+  margin-top: 12rpx;
+}
+
+.suggestion-pill {
+  flex: 1;
+  height: 44rpx;
+  border-radius: var(--radius-md);
+  background: var(--color-success-soft);
+  color: var(--color-success);
+  font-size: var(--font-size-label);
+  font-weight: 800;
+  text-align: center;
+  line-height: 44rpx;
+}
+
+.suggestion-pill.warn {
+  background: var(--color-danger-soft);
+  color: var(--color-danger);
+}
+
+.input-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: var(--layout-bottom-nav-height);
+  z-index: 11;
+  height: 70rpx;
+  padding: 8rpx 22rpx;
+  display: flex;
+  align-items: center;
+  gap: 14rpx;
+  background: var(--color-background-surface);
+  box-sizing: border-box;
+  border-top: 1rpx solid var(--color-border-soft);
+}
+
+.mic-button {
+  width: 36rpx;
+  height: 46rpx;
+  position: relative;
+}
+
+.mic-button::before {
+  content: "";
+  position: absolute;
+  left: 10rpx;
+  top: 2rpx;
+  width: 16rpx;
+  height: 28rpx;
+  border-radius: 12rpx;
+  background: var(--color-text-primary);
+}
+
+.mic-button::after {
+  content: "";
+  position: absolute;
+  left: 5rpx;
+  bottom: 2rpx;
+  width: 26rpx;
+  height: 16rpx;
+  border-bottom: 4rpx solid var(--color-text-primary);
+  border-radius: 0 0 18rpx 18rpx;
+}
+
+.input-bar input {
+  flex: 1;
+  height: 52rpx;
+  border-radius: var(--radius-card);
+  background: var(--color-background-soft-blue);
+  padding: 0 18rpx;
+  font-size: 22rpx;
+  box-sizing: border-box;
+}
+
+.input-bar button {
+  margin: 0;
+  width: 84rpx;
+  height: 52rpx;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: var(--color-background-surface);
+  font-size: 22rpx;
+  font-weight: 800;
+  line-height: 52rpx;
+  padding: 0;
+}
+
+.input-bar .finish-button {
+  width: 84rpx;
+  background: var(--color-text-primary);
+}
+
+.input-bar button::after {
+  border: 0;
+}

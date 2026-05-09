@@ -1,0 +1,20 @@
+<view class="app-header">
+  <view class="status-row">
+    <text class="status-time">9:41</text>
+    <view class="status-icons">
+      <view class="signal"><text></text><text></text><text></text><text></text></view>
+      <view class="wifi"></view>
+      <view class="battery"><text>100</text></view>
+    </view>
+  </view>
+  <view class="nav-row">
+    <view class="nav-side left-side">
+      <view wx:if="{{back}}" class="nav-back" bindtap="goBack">‹</view>
+    </view>
+    <text class="nav-title">{{title}}</text>
+    <view class="nav-side right-side">
+      <text wx:if="{{rightText}}" class="right-text">{{rightText}}</text>
+      <text wx:if="{{rightIcon}}" class="right-icon">{{rightIcon}}</text>
+    </view>
+  </view>
+</view>

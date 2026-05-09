@@ -1,0 +1,15 @@
+<app-header title="DLBCL路径卡" back="{{true}}" rightIcon="☆"></app-header>
+
+<scroll-view class="page-scroll" scroll-y type="list">
+  <view class="path-page page-pad">
+    <view wx:for="{{pathCards}}" wx:key="title" class="path-card {{item.tone}}">
+      <view class="path-icon">{{item.icon}}</view>
+      <view class="path-copy">
+        <text class="path-title">{{item.title}}</text>
+        <view wx:for="{{item.points}}" wx:key="*this" wx:for-item="point" class="path-point">• {{point}}</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<bottom-nav active="training"></bottom-nav>

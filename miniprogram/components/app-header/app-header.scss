@@ -1,0 +1,137 @@
+.app-header {
+  flex: none;
+  height: var(--layout-header-height);
+  padding: 18rpx var(--layout-page-padding-x) 6rpx;
+  background: var(--color-background-surface);
+  color: var(--color-icon-dark);
+  box-sizing: border-box;
+}
+
+.status-row {
+  height: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20rpx;
+  font-weight: 700;
+}
+
+.status-icons {
+  display: flex;
+  gap: 9rpx;
+  align-items: center;
+}
+
+.signal {
+  display: flex;
+  align-items: flex-end;
+  gap: 3rpx;
+}
+
+.signal text {
+  display: block;
+  width: 4rpx;
+  border-radius: 4rpx;
+  background: var(--color-icon-dark);
+}
+
+.signal text:nth-child(1) { height: 7rpx; }
+.signal text:nth-child(2) { height: 10rpx; }
+.signal text:nth-child(3) { height: 13rpx; }
+.signal text:nth-child(4) { height: 16rpx; }
+
+.wifi {
+  width: 18rpx;
+  height: 14rpx;
+  border-radius: 50%;
+  border-top: 5rpx solid var(--color-icon-dark);
+  position: relative;
+}
+
+.wifi::after {
+  content: "";
+  position: absolute;
+  left: 6rpx;
+  top: 8rpx;
+  width: 6rpx;
+  height: 6rpx;
+  border-radius: 50%;
+  background: var(--color-icon-dark);
+}
+
+.battery {
+  height: 18rpx;
+  min-width: 34rpx;
+  border: 2rpx solid var(--color-icon-dark);
+  border-radius: 9rpx;
+  position: relative;
+  font-size: 12rpx;
+  line-height: 16rpx;
+  text-align: center;
+  padding: 0 3rpx;
+}
+
+.battery::after {
+  content: "";
+  position: absolute;
+  right: -5rpx;
+  top: 5rpx;
+  width: 3rpx;
+  height: 8rpx;
+  border-radius: 0 3rpx 3rpx 0;
+  background: var(--color-icon-dark);
+}
+
+.nav-row {
+  height: 64rpx;
+  display: grid;
+  grid-template-columns: 96rpx 1fr 96rpx;
+  align-items: center;
+}
+
+.nav-title {
+  text-align: center;
+  font-size: var(--font-size-nav-title);
+  font-weight: 800;
+  color: var(--color-text-primary);
+}
+
+.nav-side {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+}
+
+.left-side {
+  justify-content: flex-start;
+}
+
+.right-side {
+  justify-content: flex-end;
+}
+
+.nav-back {
+  width: 52rpx;
+  height: 52rpx;
+  line-height: 46rpx;
+  font-size: 48rpx;
+  color: var(--color-text-primary);
+}
+
+.right-text {
+  min-width: 70rpx;
+  height: 42rpx;
+  border-radius: var(--radius-md);
+  border: 1rpx solid var(--color-border-default);
+  background: var(--color-background-soft-blue);
+  text-align: center;
+  line-height: 42rpx;
+  font-size: 21rpx;
+  color: var(--color-text-heading);
+  font-weight: 700;
+}
+
+.right-icon {
+  font-size: 34rpx;
+  color: var(--color-icon-dark);
+}

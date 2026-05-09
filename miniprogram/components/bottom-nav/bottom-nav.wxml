@@ -1,0 +1,14 @@
+<view class="bottom-nav">
+  <view class="nav-item {{active === 'training' ? 'active' : ''}}" bindtap="goTraining">
+    <view class="nav-icon cap"></view>
+    <text>训练</text>
+  </view>
+  <view class="nav-item {{active === 'test' ? 'active' : ''}}" bindtap="goTests">
+    <view class="nav-icon board"></view>
+    <text>测试</text>
+  </view>
+  <view class="nav-item {{active === 'profile' ? 'active' : ''}}" bindtap="goProfile">
+    <view class="nav-icon user"></view>
+    <text>我的</text>
+  </view>
+</view>

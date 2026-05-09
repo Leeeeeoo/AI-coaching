@@ -1,0 +1,43 @@
+<app-header title="{{title}}" back="{{true}}" rightText="{{mode === 'test' ? '测评' : '训练'}}"></app-header>
+
+<view class="chat-shell">
+  <scroll-view class="chat-scroll" scroll-y type="list">
+    <view class="chat-list">
+      <block wx:for="{{messages}}" wx:key="time" wx:for-item="message">
+        <view class="message-row {{message.role}}">
+          <view wx:if="{{message.role === 'ai'}}" class="mini-avatar ai">患</view>
+          <view class="bubble-wrap">
+            <text class="sender">{{message.name}}</text>
+            <view class="bubble">{{message.text}}</view>
+            <text class="message-time">{{message.time}}</text>
+          </view>
+          <view wx:if="{{message.role === 'pharmacist'}}" class="mini-avatar pharmacist">药</view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+
+  <view class="suggestion-card">
+    <text class="suggestion-title">{{mode === 'test' ? '测试模式：无过程提示' : '训练提示'}}</text>
+    <view class="suggestions">
+      <block wx:if="{{mode === 'test'}}">
+        <text class="suggestion-pill warn">请完成服务后生成报告</text>
+      </block>
+      <block wx:elif="{{suggestions.length === 0}}">
+        <text class="suggestion-pill">继续追问关键信息</text>
+      </block>
+      <block wx:else>
+        <text wx:for="{{suggestions}}" wx:key="*this" class="suggestion-pill {{index === 1 ? 'warn' : ''}}">{{item}}</text>
+      </block>
+    </view>
+  </view>
+
+  <view class="input-bar">
+    <view class="mic-button"></view>
+    <input value="{{inputValue}}" bindinput="onInput" placeholder="输入你的回复..." confirm-type="send" bindconfirm="sendMessage" />
+    <button loading="{{loading}}" bindtap="sendMessage">发送</button>
+    <button class="finish-button" bindtap="finishChat">结束</button>
+  </view>
+</view>
+
+<bottom-nav active="{{mode === 'test' ? 'test' : 'training'}}"></bottom-nav>

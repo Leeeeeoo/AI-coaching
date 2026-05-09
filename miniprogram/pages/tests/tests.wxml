@@ -1,0 +1,18 @@
+<app-header title="实战测试"></app-header>
+
+<scroll-view class="page-scroll" scroll-y type="list">
+  <view class="tests-page page-pad">
+    <view wx:for="{{testItems}}" wx:key="title" class="test-card" data-index="{{index}}" bindtap="openTest">
+      <view class="test-icon {{item.tone}}"></view>
+      <view class="test-copy">
+        <text class="test-title">{{item.title}}</text>
+        <view class="meta-row">
+          <text wx:for="{{item.meta}}" wx:key="*this">{{item}}</text>
+        </view>
+      </view>
+      <text class="chevron">›</text>
+    </view>
+  </view>
+</scroll-view>
+
+<bottom-nav active="test"></bottom-nav>

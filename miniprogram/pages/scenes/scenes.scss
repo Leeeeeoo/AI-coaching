@@ -1,0 +1,109 @@
+﻿.scene-page {
+  padding-bottom: calc(var(--layout-bottom-nav-height) + 26rpx);
+}
+
+.summary-row,
+.finished-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-text-heading);
+  font-size: var(--font-size-section-title);
+  font-weight: 800;
+}
+
+.summary-row text:last-child,
+.finished-row text:last-child {
+  color: var(--color-text-muted);
+  font-weight: 700;
+}
+
+.scene-panel {
+  margin-top: 14rpx;
+  padding: 10rpx 14rpx 14rpx;
+  border-radius: var(--radius-card-large);
+  border: 1rpx solid var(--color-border-default);
+  background: var(--color-background-surface);
+  box-shadow: var(--shadow-card-raised);
+}
+
+.group-title {
+  margin: 12rpx 0 6rpx;
+  font-size: 22rpx;
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+.scene-row {
+  min-height: var(--component-scenario-row-min-height);
+  display: flex;
+  align-items: center;
+  gap: 14rpx;
+  padding: 6rpx 0;
+}
+
+.scene-index {
+  flex: none;
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-size: var(--font-size-label);
+  font-weight: 800;
+  text-align: center;
+  line-height: 32rpx;
+}
+
+.scene-copy {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rpx;
+}
+
+.scene-title {
+  color: var(--color-text-heading);
+  font-size: 22rpx;
+  font-weight: 800;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.scene-desc {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-micro);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.scene-status {
+  flex: none;
+  padding: 5rpx 11rpx;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-micro);
+  font-weight: 800;
+}
+
+.scene-status.done {
+  color: var(--color-success);
+  background: var(--color-success-soft);
+}
+
+.scene-status.active {
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.scene-status.idle {
+  color: var(--color-text-muted);
+  background: var(--color-background-soft-blue);
+}
+
+.finished-row {
+  margin: 18rpx 8rpx 0;
+  font-size: 22rpx;
+}

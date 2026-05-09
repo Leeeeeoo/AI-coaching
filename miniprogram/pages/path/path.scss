@@ -1,0 +1,79 @@
+﻿.path-page {
+  padding-bottom: calc(var(--layout-bottom-nav-height) + 26rpx);
+  display: flex;
+  flex-direction: column;
+  gap: 14rpx;
+}
+
+.path-card {
+  min-height: var(--component-path-card-min-height);
+  border-radius: 18rpx;
+  border: 1rpx solid var(--color-border-default);
+  background: var(--color-background-soft-blue);
+  padding: 20rpx 22rpx;
+  display: flex;
+  gap: 22rpx;
+  box-sizing: border-box;
+  box-shadow: var(--shadow-card-raised);
+}
+
+.path-card.green {
+  background: var(--color-success-soft);
+  border-color: var(--color-success);
+}
+
+.path-card.orange {
+  background: var(--color-warning-soft);
+  border-color: var(--color-warning);
+}
+
+.path-icon {
+  flex: none;
+  width: 74rpx;
+  height: 74rpx;
+  border-radius: 22rpx;
+  color: var(--color-background-surface);
+  background: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  font-weight: 900;
+  transform: rotate(-12deg);
+}
+
+.green .path-icon {
+  background: var(--color-success);
+}
+
+.orange .path-icon {
+  background: var(--color-warning);
+}
+
+.path-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.path-title {
+  display: block;
+  margin-bottom: 12rpx;
+  color: var(--color-primary);
+  font-size: 30rpx;
+  font-weight: 900;
+}
+
+.green .path-title {
+  color: var(--color-success);
+}
+
+.orange .path-title {
+  color: var(--color-warning);
+}
+
+.path-point {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-body);
+  line-height: 1.5;
+  font-weight: 700;
+}

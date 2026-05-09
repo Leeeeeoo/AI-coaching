@@ -1,0 +1,31 @@
+<app-header title="训练场景列表" back="{{true}}" rightText="全部⌄"></app-header>
+
+<scroll-view class="page-scroll" scroll-y type="list">
+  <view class="scene-page page-pad">
+    <view class="summary-row">
+      <text>全部场景</text>
+      <text>15 场</text>
+    </view>
+
+    <view class="scene-panel">
+      <block wx:for="{{scenarioGroups}}" wx:key="title" wx:for-item="group">
+        <view class="group-title">{{group.title}}</view>
+        <view wx:for="{{group.items}}" wx:key="id" wx:for-item="scene" class="scene-row" data-id="{{scene.id}}" data-mode="{{scene.mode}}" bindtap="openScenario">
+          <view class="scene-index">{{scene.id}}</view>
+          <view class="scene-copy">
+            <text class="scene-title">{{scene.title}}</text>
+            <text class="scene-desc">{{scene.desc}}</text>
+          </view>
+          <text class="scene-status {{scene.tone}}">{{scene.status}}</text>
+        </view>
+      </block>
+    </view>
+
+    <view class="finished-row">
+      <text>已完成场景（7/15）</text>
+      <text>⌄</text>
+    </view>
+  </view>
+</scroll-view>
+
+<bottom-nav active="training"></bottom-nav>

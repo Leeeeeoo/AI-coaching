@@ -1,0 +1,70 @@
+<app-header title="测试报告" back="{{true}}" rightIcon="↗"></app-header>
+
+<scroll-view class="page-scroll" scroll-y type="list">
+  <view class="report-page page-pad">
+    <view class="summary-card">
+      <view class="score-ring" style="background: conic-gradient(var(--color-primary) 0 {{score}}%, var(--color-border-soft) {{score}}% 100%);">
+        <text>总得分</text>
+        <view><text>{{score}}</text><text>/100</text></view>
+      </view>
+      <view class="summary-copy">
+        <text class="grade">{{grade}}</text>
+        <text class="comment">{{comment}}</text>
+        <view class="summary-meta">
+          <view><text>任务类型</text><text>{{scenarioTitle}}</text></view>
+          <view><text>用时</text><text>本次会话</text></view>
+          <view><text>完成时间</text><text>{{completedAt}}</text></view>
+        </view>
+      </view>
+    </view>
+
+    <view class="block-title">维度得分 <text>（满分100）</text></view>
+    <view class="dimension-grid">
+      <view wx:for="{{reportDimensions}}" wx:key="label" class="dimension-item">
+        <text>{{item.label}}</text>
+        <view>{{item.value}}</view>
+        <view class="dimension-bar"><view style="width: {{item.value}}%;"></view></view>
+      </view>
+    </view>
+
+    <view class="block-title">重点回顾</view>
+    <view class="review-grid">
+      <view wx:for="{{reportReview}}" wx:key="title" class="review-card">
+        <view class="review-head"><text>{{item.index}}</text><text>{{item.title}}</text></view>
+        <view class="review-result {{item.tone}}">{{item.result}}</view>
+      </view>
+    </view>
+
+    <view class="report-section" wx:if="{{goodPoints.length}}">
+      <view class="block-title">做得好的地方</view>
+      <text wx:for="{{goodPoints}}" wx:key="*this">{{item}}</text>
+    </view>
+
+    <view class="report-section" wx:if="{{improvements.length}}">
+      <view class="block-title">主要不足</view>
+      <text wx:for="{{improvements}}" wx:key="*this">{{item}}</text>
+    </view>
+
+    <view class="report-section" wx:if="{{missedQuestions.length}}">
+      <view class="block-title">漏问关键问题</view>
+      <text wx:for="{{missedQuestions}}" wx:key="*this">{{item}}</text>
+    </view>
+
+    <view class="report-section" wx:if="{{riskReminder}}">
+      <view class="block-title">风险提醒</view>
+      <text>{{riskReminder}}</text>
+    </view>
+
+    <view class="report-section" wx:if="{{revisedScript}}">
+      <view class="block-title">话术修正</view>
+      <text>{{revisedScript}}</text>
+    </view>
+
+    <view class="report-section" wx:if="{{nextSuggestion}}">
+      <view class="block-title">下次建议</view>
+      <text>{{nextSuggestion}}</text>
+    </view>
+  </view>
+</scroll-view>
+
+<bottom-nav active="test"></bottom-nav>

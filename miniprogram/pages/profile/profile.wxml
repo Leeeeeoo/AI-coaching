@@ -1,0 +1,45 @@
+<app-header title="我的" rightIcon="♡"></app-header>
+
+<scroll-view class="page-scroll" scroll-y type="list">
+  <view class="profile-page page-pad">
+    <view class="profile-card">
+      <view class="doctor-head">
+        <view class="hair"></view>
+        <view class="face"></view>
+        <view class="coat"></view>
+      </view>
+      <view class="profile-copy">
+        <view class="name-row"><text>张药师</text><text>已认证</text></view>
+        <text class="role">肿瘤专科药师</text>
+        <text class="rank">本月成长中</text>
+      </view>
+    </view>
+
+    <view class="stat-grid">
+      <view wx:for="{{profileStats}}" wx:key="label" class="stat-card">
+        <text>{{item.label}}</text>
+        <view>{{item.value}}</view>
+      </view>
+    </view>
+
+    <view class="content-grid">
+      <view class="growth-card">
+        <text class="block-title">能力成长曲线</text>
+        <view class="line-chart">
+          <view wx:for="{{growth}}" wx:key="*this" class="growth-dot" style="left: {{index * 38}}rpx; bottom: {{item}}rpx;"></view>
+          <view class="growth-label">85分</view>
+        </view>
+      </view>
+
+      <view class="badge-card">
+        <text class="block-title">我的徽章</text>
+        <view wx:for="{{badges}}" wx:key="*this" class="badge-row">
+          <view class="badge-icon {{index === 1 ? 'green' : index === 2 ? 'purple' : ''}}"></view>
+          <text>{{item}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<bottom-nav active="profile"></bottom-nav>

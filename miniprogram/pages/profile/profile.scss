@@ -1,0 +1,217 @@
+﻿.profile-page {
+  padding-bottom: calc(var(--layout-bottom-nav-height) + 26rpx);
+}
+
+.profile-card {
+  min-height: 126rpx;
+  border-radius: 18rpx;
+  border: 1rpx solid var(--color-border-default);
+  background: var(--color-background-soft-blue);
+  padding: 16rpx 18rpx;
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  box-sizing: border-box;
+}
+
+.doctor-head {
+  width: 92rpx;
+  height: 92rpx;
+  border-radius: 50%;
+  background: var(--color-background-surface);
+  border: 1rpx solid var(--color-border-default);
+  position: relative;
+  overflow: hidden;
+}
+
+.doctor-head .hair {
+  position: absolute;
+  left: 24rpx;
+  top: 10rpx;
+  width: 48rpx;
+  height: 42rpx;
+  border-radius: 24rpx 24rpx 14rpx 14rpx;
+  background: #344256;
+}
+
+.doctor-head .face {
+  position: absolute;
+  left: 28rpx;
+  top: 20rpx;
+  width: 38rpx;
+  height: 44rpx;
+  border-radius: 50%;
+  background: #ffd9bf;
+  border: 3rpx solid #344256;
+}
+
+.doctor-head .coat {
+  position: absolute;
+  left: 18rpx;
+  bottom: 0;
+  width: 58rpx;
+  height: 36rpx;
+  border-radius: 20rpx 20rpx 6rpx 6rpx;
+  background: var(--color-background-surface);
+  border: 1rpx solid var(--color-border-default);
+}
+
+.profile-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.name-row {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.name-row text:first-child {
+  color: var(--color-text-primary);
+  font-size: 28rpx;
+  font-weight: 900;
+}
+
+.name-row text:last-child,
+.rank {
+  padding: 4rpx 10rpx;
+  border-radius: 10rpx;
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-size: var(--font-size-micro);
+  font-weight: 800;
+}
+
+.role {
+  display: block;
+  margin: 8rpx 0;
+  color: var(--color-text-secondary);
+  font-size: 22rpx;
+  font-weight: 700;
+}
+
+.stat-grid {
+  margin-top: 14rpx;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12rpx;
+}
+
+.stat-card {
+  min-height: 92rpx;
+  border-radius: var(--radius-card);
+  background: var(--color-background-surface);
+  border: 1rpx solid var(--color-border-default);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8rpx;
+  box-shadow: var(--shadow-card);
+}
+
+.stat-card text {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-micro);
+  font-weight: 700;
+}
+
+.stat-card view {
+  color: var(--color-text-primary);
+  font-size: 28rpx;
+  font-weight: 900;
+}
+
+.content-grid {
+  margin-top: 14rpx;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16rpx;
+}
+
+.growth-card,
+.badge-card {
+  min-height: 300rpx;
+  border-radius: var(--radius-card-large);
+  background: var(--color-background-surface);
+  border: 1rpx solid var(--color-border-default);
+  padding: 18rpx;
+  box-sizing: border-box;
+  box-shadow: var(--shadow-card);
+}
+
+.block-title {
+  display: block;
+  color: var(--color-text-heading);
+  font-size: var(--font-size-section-title);
+  font-weight: 900;
+  margin-bottom: 18rpx;
+}
+
+.line-chart {
+  height: 220rpx;
+  position: relative;
+  border-left: 1rpx solid var(--color-border-soft);
+  border-bottom: 1rpx solid var(--color-border-soft);
+  background: linear-gradient(var(--color-background-chart-grid) 1rpx, transparent 1rpx) 0 0 / 100% 54rpx;
+}
+
+.growth-dot {
+  position: absolute;
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+
+.growth-label {
+  position: absolute;
+  right: 2rpx;
+  top: 22rpx;
+  padding: 4rpx 8rpx;
+  border-radius: 8rpx;
+  color: var(--color-background-surface);
+  background: var(--color-primary);
+  font-size: var(--font-size-micro);
+  font-weight: 800;
+}
+
+.badge-row {
+  min-height: 60rpx;
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  border-bottom: 1rpx solid var(--color-border-soft);
+  color: var(--color-text-body);
+  font-size: 21rpx;
+  font-weight: 700;
+}
+
+.badge-row:last-child {
+  border-bottom: 0;
+}
+
+.badge-icon {
+  width: 38rpx;
+  height: 38rpx;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  position: relative;
+}
+
+.badge-icon::before {
+  content: "";
+  position: absolute;
+  inset: 9rpx;
+  border: 4rpx solid var(--color-background-surface);
+  transform: rotate(45deg);
+}
+
+.badge-icon.green {
+  background: var(--color-success);
+}
+
+.badge-icon.purple {
+  background: var(--color-purple);
+}

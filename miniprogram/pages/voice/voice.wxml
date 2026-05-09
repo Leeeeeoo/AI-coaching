@@ -1,0 +1,51 @@
+<app-header title="{{title}}" back="{{true}}"></app-header>
+
+<scroll-view class="page-scroll" scroll-y type="list">
+  <view class="voice-page page-pad">
+    <view class="call-status {{ended ? 'ended' : ''}}">
+      <view class="status-dot"></view>
+      <text>{{ended ? '通话已结束' : recording ? '录音中' : '语音演练中'}}</text>
+    </view>
+
+    <view class="voice-stage">
+      <view class="wave left"><text></text><text></text><text></text><text></text><text></text></view>
+      <view class="patient-avatar">
+        <view class="hair"></view>
+        <view class="face"></view>
+        <view class="body"></view>
+        <text>AI患者</text>
+      </view>
+      <view class="wave right"><text></text><text></text><text></text><text></text><text></text></view>
+    </view>
+
+    <view class="voice-log">
+      <view wx:for="{{messages}}" wx:key="time" class="voice-message {{item.role}}">
+        <text>{{item.name}}</text>
+        <view>{{item.text}}</view>
+      </view>
+    </view>
+
+    <view class="cue-title">沟通提示卡</view>
+    <view class="cue-list">
+      <view wx:for="{{cues}}" wx:key="*this" class="cue-row {{index === 4 ? 'danger' : ''}}">
+        <view class="cue-icon">{{index === 4 ? '!' : index + 1}}</view>
+        <text>{{item}}</text>
+      </view>
+    </view>
+
+    <view class="call-actions">
+      <view class="call-action" bindtap="toggleMute">
+        <view class="action-icon mic {{muted ? 'off' : ''}}"></view>
+        <text>{{muted ? '已静音' : '静音'}}</text>
+      </view>
+      <view class="record-button {{recording ? 'recording' : ''}}" bindtap="toggleRecording">
+        <view></view>
+      </view>
+      <view class="hangup" bindtap="endCall">
+        <view></view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<bottom-nav active="training"></bottom-nav>
