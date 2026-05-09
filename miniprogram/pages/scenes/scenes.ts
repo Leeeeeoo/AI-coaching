@@ -11,7 +11,8 @@ Component({
       if (this.data.loading) {
         return
       }
-      const channel = event.currentTarget.dataset.mode as SessionChannel
+      const sceneMode = String(event.currentTarget.dataset.mode || 'chat')
+      const channel: SessionChannel = sceneMode === 'voice' ? 'voice' : 'text'
       const sceneId = Number(event.currentTarget.dataset.id || 1)
       this.setData({ loading: true })
       wx.showLoading({ title: '创建会话...' })
